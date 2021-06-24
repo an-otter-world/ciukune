@@ -1,15 +1,30 @@
 <template lang="pug">
-div(class="ciu-primary ciu-navbar ciu-responsive")
+div(class="ciu-primary ciu-navbar")
   div(class="ciu-brand")
     slot(name="brand")
-  div(class="ciu-menu")
-    a(href="#")
+  div(class="ciu-menu" v-on:focusout="isOpened = false")
+    a(href="#" v-on:click="isOpened = !isOpened")
       ciu-icon(icon="bars")
-    div(class="ciu-links")
+    div(class="ciu-links" v-bind:class="{ 'ciu-opened': isOpened }")
       slot
   div(class="ciu-end")
     slot(name="end")
 </template>
+
+<script lang="ts">
+import { defineComponent } from 'vue'
+import { ref } from 'vue'
+
+export default defineComponent({
+  setup() {
+    const isOpened = ref(false);
+
+    return {
+      isOpened,
+    }
+  },
+})
+</script>
 
 <style>
 .ciu-navbar {
@@ -59,9 +74,14 @@ div(class="ciu-primary ciu-navbar ciu-responsive")
   background: var(--ciu-primary);
   flex-direction: column;
   left: 0;
+  display: none;
   padding: calc(0.5 * var(--ciu-spacing));
   position: absolute;
   top: 3rem;
+}
+
+.ciu-navbar.ciu-responsive > .ciu-menu > .ciu-links.ciu-opened {
+  display: flex;
 }
 
 .ciu-navbar > .ciu-end {
@@ -82,6 +102,7 @@ div(class="ciu-primary ciu-navbar ciu-responsive")
 
 .ciu-navbar a:hover {
   background-color: var(--ciu-primary-light);
+  text-decoration: none;
 }
 
 .ciu-navbar a.router-link-active {
