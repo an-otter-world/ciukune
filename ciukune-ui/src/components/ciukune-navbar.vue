@@ -5,5 +5,5 @@ ciu-navbar
   router-link(to="/") Home
   router-link(to="/test") Test
   template(v-slot:end)
-    p profile
+    ciu-icon(icon="user-circle")
 </template>

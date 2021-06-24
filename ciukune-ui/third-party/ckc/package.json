@@ -9,6 +9,8 @@
   "author": "STJV",
   "license": "WTFPL",
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.35",
+    "@fortawesome/free-solid-svg-icons": "^5.15.3",
     "axios": "^0.21.1",
     "vue": "^3.1.1"
   }
