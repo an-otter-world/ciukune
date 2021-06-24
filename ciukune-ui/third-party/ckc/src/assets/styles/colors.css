@@ -16,8 +16,17 @@
 }
 
 .ciu-primary {
-  background-color: var(--ciu-primary-dark);
+  background-color: var(--ciu-primary);
   color: var(--ciu-on-primary);
+}
+
+.ciu-primary a {
+  color: var(--ciu-on-primary);
+}
+
+.ciu-primary a:hover {
+  color: var(--ciu-on-primary);
+  opacity: 0.8;
 }
 
 .ciu-primary-dark {
