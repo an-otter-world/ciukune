@@ -1,3 +1,5 @@
+import './assets/styles/_index.css'
+import './font-awesome'
 import CiuApiErrors from './components/ciu-api-errors.vue'
 import CiuApiForm from './components/ciu-api-form.vue'
 import CiuApiInput from './components/ciu-api-input.vue'
@@ -11,11 +13,15 @@ import CiuScreenCenter from './components/ciu-screen-center.vue'
 import CiuSpinner from './components/ciu-spinner.vue'
 import CiuTextField from './components/ciu-text-field.vue'
 import { App } from 'vue';
+import { MediaQueryOptions } from './services/media-query'
 import { installResourceManager } from './core/resource-manager'
-import './assets/styles/_index.css'
-import './font-awesome'
+import { mediaQuery } from './services/media-query'
 
-export default function install<T>(app: App<T>) {
+export interface CkcOptions {
+  mqOptions?: MediaQueryOptions
+}
+
+export default function install<T>(app: App<T>, options?: CkcOptions) {
     installResourceManager(app)
     app
       .component('CiuApiErrors', CiuApiErrors)
@@ -30,6 +36,8 @@ export default function install<T>(app: App<T>) {
       .component('CiuScreenCenter', CiuScreenCenter)
       .component('CiuSpinner', CiuSpinner)
       .component('CiuTextField', CiuTextField)
+
+    app.config.globalProperties.$mq = mediaQuery(options?.mqOptions)
 }
 
 export { Resource } from './core/resource'

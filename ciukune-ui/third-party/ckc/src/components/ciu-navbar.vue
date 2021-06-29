@@ -1,5 +1,5 @@
 <template lang="pug">
-div(class="ciu-primary ciu-navbar")
+div(class="ciu-primary ciu-navbar" v-bind:class="{'ciu-small': !$mq('sm+')}")
   div(class="ciu-brand")
     slot(name="brand")
   div(class="ciu-menu" v-on:focusout="isOpened = false")
@@ -43,7 +43,7 @@ export default defineComponent({
   margin-right: var(--ciu-spacing);
 }
 
-.ciu-navbar.ciu-responsive > .ciu-brand {
+.ciu-navbar.ciu-small > .ciu-brand {
   flex-grow: 1;
   order: 1;
 }
@@ -53,7 +53,7 @@ export default defineComponent({
   flex-grow: 1;
 }
 
-.ciu-navbar.ciu-responsive > .ciu-menu {
+.ciu-navbar.ciu-small > .ciu-menu {
   flex-direction: column;
   flex-grow: 0;
 }
@@ -62,7 +62,7 @@ export default defineComponent({
   display: none;
 }
 
-.ciu-navbar.ciu-responsive > .ciu-menu > a {
+.ciu-navbar.ciu-small > .ciu-menu > a {
   display: inline;
 }
 
@@ -70,7 +70,7 @@ export default defineComponent({
   display: flex;
 }
 
-.ciu-navbar.ciu-responsive > .ciu-menu > .ciu-links {
+.ciu-navbar.ciu-small > .ciu-menu > .ciu-links {
   background: var(--ciu-primary);
   flex-direction: column;
   left: 0;
@@ -80,7 +80,7 @@ export default defineComponent({
   top: 3rem;
 }
 
-.ciu-navbar.ciu-responsive > .ciu-menu > .ciu-links.ciu-opened {
+.ciu-navbar.ciu-small > .ciu-menu > .ciu-links.ciu-opened {
   display: flex;
 }
 
@@ -90,7 +90,7 @@ export default defineComponent({
   margin-right: var(--ciu-spacing);
 }
 
-.ciu-navbar.ciu-responsive > .ciu-end {
+.ciu-navbar.ciu-small > .ciu-end {
   order: 2;
 }
 
