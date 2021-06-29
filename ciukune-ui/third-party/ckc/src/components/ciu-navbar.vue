@@ -1,5 +1,5 @@
 <template lang="pug">
-div(class="ciu-primary ciu-navbar" v-bind:class="{'ciu-small': !$mq('sm+')}")
+div(class="ciu-primary ciu-navbar" v-bind:class="{'ciu-small': !$mq('sm')}")
   div(class="ciu-brand")
     slot(name="brand")
   div(class="ciu-menu" v-on:focusout="isOpened = false")
