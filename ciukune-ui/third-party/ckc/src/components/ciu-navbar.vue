@@ -2,10 +2,10 @@
 div(class="ciu-primary ciu-navbar" v-bind:class="{'ciu-small': !$mq('sm')}")
   div(class="ciu-brand")
     slot(name="brand")
-  div(class="ciu-menu" v-on:focusout="isOpened = false")
-    a(href="#" v-on:click="isOpened = !isOpened")
+  div(class="ciu-menu" ref="menu")
+    a(href="#" v-on:click="toggle()")
       ciu-icon(icon="bars")
-    div(class="ciu-links" v-bind:class="{ 'ciu-opened': isOpened }")
+    div(class="ciu-links" v-on:mouseup="close()" v-bind:class="{ 'ciu-opened': isOpened }")
       slot
   div(class="ciu-end")
     slot(name="end")
@@ -18,9 +18,39 @@ import { ref } from 'vue'
 export default defineComponent({
   setup() {
     const isOpened = ref(false);
+    const html = document.documentElement
+    const menu = ref(null)
+
+    function open() {
+      html.addEventListener('click', onBodyClick);
+      isOpened.value = true
+    }
+
+    function close() {
+      html.removeEventListener('click', onBodyClick);
+      isOpened.value = false
+    }
+
+    function toggle() {
+      if(!isOpened.value) {
+        open()
+      }
+      else {
+        close()
+      }
+    }
+
+    function onBodyClick(e) {
+      if(!menu.value.contains(e.target)) {
+        close()
+      }
+    }
 
     return {
+      close,
       isOpened,
+      menu,
+      toggle,
     }
   },
 })
