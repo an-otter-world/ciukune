@@ -124,18 +124,18 @@ export default defineComponent({
   order: 2;
 }
 
-.ciu-navbar a {
+.ciu-navbar > .ciu-menu a {
   align-items: center;
   padding: var(--ciu-spacing);
   text-transform: uppercase;
 }
 
-.ciu-navbar a:hover {
+.ciu-navbar > .ciu-menu a:hover {
   background-color: var(--ciu-primary-light);
   text-decoration: none;
 }
 
-.ciu-navbar a.router-link-active {
+.ciu-navbar > .ciu-menu a.router-link-active {
   background-color: var(--ciu-primary-dark);
   text-transform: uppercase;
 }
