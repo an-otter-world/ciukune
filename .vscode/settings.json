@@ -4,6 +4,10 @@
         "rules": {
           "import/no-duplicates": "off",
           "vue/max-attributes-per-line": "off"
-        }
+        },
+        "plugins": [
+          "vue",
+          "html"
+        ]
     }
 }
