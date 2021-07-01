@@ -4,8 +4,8 @@ div(class="ciu-dropdown")
     a(href="#" @click="toggle()")
       slot(name="header")
         ciu-icon(icon="chevron-down")
-    div(v-if="isOpen" @click="isOpen = false")
-      slot
+  div(v-if="isOpen" @click="isOpen = false")
+    slot
 </template>
 
 <script lang="ts">
@@ -29,26 +29,19 @@ export default defineComponent({
 <style>
 .ciu-dropdown > header {
   position: relative;
+}
+
+.ciu-dropdown > header {
   vertical-align: middle;
-}
-
-.ciu-dropdown > * > a {
-  align-content: center;
-  display: flex;
-}
-
-.ciu-dropdown > * > a > * {
-  margin-left: var(--ciu-spacing);
-  margin-right: var(--ciu-spacing);
 }
 
 .ciu-dropdown > div {
   background: var(--ciu-primary);
-  border-bottom-left-radius: var(--ciu-on-primary);
-  border-bottom-right-radius: var(--ciu-on-primary);
-  border-top: 1px solid var(--ciu-color);
-  display:block;
+  border-bottom-left-radius: var(--ciu-border-radius);
+  border-bottom-right-radius: var(--ciu-border-radius);
+  border-top: 1px solid var(--ciu-on-primary);
   padding: var(--ciu-spacing);
   position: absolute;
+  right: 0px;
 }
 </style>
