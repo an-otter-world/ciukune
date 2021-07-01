@@ -5,5 +5,11 @@ ciu-navbar
   router-link(to="/") Home
   router-link(to="/test") Test
   template(v-slot:end)
-    ciu-icon(icon="user-circle")
+    ciu-dropdown
+      template(#header)
+        ciu-icon(icon="user-circle")
+      router-link(to="logout")
+        div(class="ciu-flex-row")
+          ciu-icon(icon="sign-out-alt")
+          div Logout
 </template>
