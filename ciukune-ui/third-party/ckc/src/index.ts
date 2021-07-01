@@ -5,6 +5,7 @@ import CiuApiForm from './components/ciu-api-form.vue'
 import CiuApiInput from './components/ciu-api-input.vue'
 import CiuButton from './components/ciu-button.vue'
 import CiuComponent from './components/ciu-component.vue'
+import CiuDropdown from './components/ciu-dropdown.vue'
 import CiuIcon from './components/ciu-icon.vue'
 import CiuInput from './components/ciu-input.vue'
 import CiuLoadingOverlay from './components/ciu-loading-overlay.vue'
@@ -29,6 +30,7 @@ export default function install<T>(app: App<T>, options?: CkcOptions) {
       .component('CiuApiInput', CiuApiInput)
       .component('CiuButton', CiuButton)
       .component('CiuComponent', CiuComponent)
+      .component('CiuDropdown', CiuDropdown)
       .component('CiuIcon', CiuIcon)
       .component('CiuInput', CiuInput)
       .component('CiuLoadingOverlay', CiuLoadingOverlay)
