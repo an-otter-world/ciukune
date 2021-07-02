@@ -6,7 +6,7 @@
 [subrepo]
 	remote = https://github.com/STJV/ckc
 	branch = main
-	commit = f84b558c80c140713431bc2c15cc9a01f4154cd6
+	commit = dd8be73aa277a8a0c8c32b3263437e4c1f6b1dca
 	method = merge
 	cmdver = 0.4.0
-	parent = 612ed968622a74fe6812fce42c68306bb4cdd944
+	parent = 2f6e59dbfbb85301025c59121025f07865d82529
