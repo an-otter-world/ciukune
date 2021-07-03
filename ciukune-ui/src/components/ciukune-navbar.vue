@@ -8,8 +8,6 @@ ciu-navbar
     ciu-dropdown
       template(#header)
         ciu-icon(icon="user-circle")
-      router-link(to="logout")
-        div(class="ciu-flex-row")
-          ciu-icon(icon="sign-out-alt")
-          div Logout
+      ciu-router-link(to="/profile" icon="user-circle") {{ $t('navbar.profile') }}
+      ciu-router-link(to="logout" icon="sign-out-alt") {{ $t('navbar.logout') }}
 </template>
