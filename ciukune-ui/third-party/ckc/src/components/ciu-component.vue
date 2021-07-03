@@ -16,6 +16,7 @@ export default defineComponent({
 
 <style>
 .ciu-component {
+  margin: var(--ciu-spacing);
   color: var(--ciu-on-surface);
   display: grid;
 }
