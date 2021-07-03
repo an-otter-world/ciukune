@@ -10,6 +10,7 @@ import CiuIcon from './components/ciu-icon.vue'
 import CiuInput from './components/ciu-input.vue'
 import CiuLoadingOverlay from './components/ciu-loading-overlay.vue'
 import CiuNavbar from './components/ciu-navbar.vue'
+import CiuRouterLink from './components/ciu-router-link.vue'
 import CiuScreenCenter from './components/ciu-screen-center.vue'
 import CiuSpinner from './components/ciu-spinner.vue'
 import CiuTextField from './components/ciu-text-field.vue'
@@ -35,6 +36,7 @@ export default function install<T>(app: App<T>, options?: CkcOptions) {
       .component('CiuInput', CiuInput)
       .component('CiuLoadingOverlay', CiuLoadingOverlay)
       .component('CiuNavbar', CiuNavbar)
+      .component('CiuRouterLink', CiuRouterLink)
       .component('CiuScreenCenter', CiuScreenCenter)
       .component('CiuSpinner', CiuSpinner)
       .component('CiuTextField', CiuTextField)
