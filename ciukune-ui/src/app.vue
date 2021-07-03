@@ -12,7 +12,7 @@ import { defineComponent } from 'vue'
 import { ref } from 'vue'
 import { onMounted } from 'vue'
 import LoginView from './views/login.vue'
-import CiukuneNavbar from './components/ciukune-navbar.vue'
+import Navbar from './components/navbar.vue'
 import { getMeResource } from './api/resources/auth/me'
 
 
@@ -20,7 +20,7 @@ export default defineComponent({
   name: 'App',
   components: {
     LoginView,
-    CiukuneNavbar
+    Navbar
   },
   setup() {
     const loading = ref(false)
