@@ -3,7 +3,7 @@ ciu-screen-center(v-if="!me.state")
   ciu-loading-overlay(:loading="me.loading")
     login-view
 div(v-else)
-  ciukune-navbar
+  navbar
   router-view
 </template>
 
