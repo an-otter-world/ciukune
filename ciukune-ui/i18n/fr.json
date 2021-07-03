@@ -1,5 +1,5 @@
 {
-  "login-view": {
+  "login": {
     "email": "Couriel",
     "password": "Mot de passe",
     "login": "S'identifier",

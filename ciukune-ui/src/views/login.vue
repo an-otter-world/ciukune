@@ -1,18 +1,18 @@
 <template lang="pug">
 ciu-screen-center
   ciu-component
-    header {{ $t('login-view.title') }}
+    header {{ $t('login.title') }}
     ciu-api-form(:resource="login" @submit.prevent="refresh()")
       ciu-api-errors
       ciu-api-input(field="email")
-        ciu-text-field(:placeholder="$t('login-view.email')" v-model="login.email")
+        ciu-text-field(:placeholder="$t('login.email')" v-model="login.email")
       ciu-api-input(field="password")
-        ciu-text-field(password :placeholder="$t('login-view.password')" v-model="login.password")
-      ciu-button(type="submit") {{ $t('login-view.login') }} 
+        ciu-text-field(password :placeholder="$t('login.password')" v-model="login.password")
+      ciu-button(type="submit") {{ $t('login.login') }} 
     hr
     div(class="links-area")
-      a(href='#') {{ $t('login-view.reset-password') }}
-      a(href='#') {{ $t('login-view.register') }}
+      a(href='#') {{ $t('login.reset-password') }}
+      a(href='#') {{ $t('login.register') }}
 </template>
 
 <script lang="ts">
