@@ -10,5 +10,9 @@
   "navbar": {
     "profile": "Profile",
     "logout": "Deconnexion"
+  },
+  "profile": {
+    "email": "Courriel",
+    "username": "Pseudonyme"
   }
 }
