@@ -11,7 +11,7 @@ import { getCurrentResource } from '../core/current-resource'
 export default defineComponent({
   props: {
   },
-  setup(props) {
+  setup() {
     let resource = getCurrentResource()
     let error = computed(() => resource.error)
     return {

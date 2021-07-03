@@ -12,8 +12,8 @@ import { getCurrentResource } from '@ciukune/ckc'
 export default defineComponent({
   props: {
     'field': {
-        type: String,
-        required: true
+      type: String,
+      required: true
     },
   },
   setup(props) {

@@ -15,8 +15,8 @@ import { setCurrentResource } from '../core/current-resource'
 export default defineComponent({
   props: {
     'resource': {
-        required: true,
-        type: Object as PropType<Resource>
+      required: true,
+      type: Object as PropType<Resource>
     },
   },
   setup(props) {
