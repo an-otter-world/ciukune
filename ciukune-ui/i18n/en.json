@@ -6,5 +6,9 @@
     "reset-password": "Reset Password",
     "register": "Register",
     "title": "Ciu Kune - Login"
+  },
+  "navbar": {
+    "profile": "Profile",
+    "logout": "Sign Out"
   }
 }
