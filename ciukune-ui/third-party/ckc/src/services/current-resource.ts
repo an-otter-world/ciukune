@@ -1,5 +1,5 @@
 import { InjectionKey } from 'vue'
-import { Resource } from '../../lib/api/resource'
+import { Resource } from '../services/resource'
 import { inject } from 'vue'
 import { provide } from 'vue'
 
@@ -9,7 +9,7 @@ export function setCurrentResource(resource: Resource) {
   provide(CurrentResourceKey, resource)
 }
 
-export function getCurrentResource() {
+export function getCurrentResource() : Resource {
     let resource = inject(CurrentResourceKey)
     if(!resource) {
       throw new Error("No resource provided.")

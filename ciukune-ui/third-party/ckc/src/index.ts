@@ -48,6 +48,7 @@ export default function install<T>(app: App<T>, options?: CkcOptions) {
 
 export { Backend } from './services/backend'
 export { Resource } from './services/resource'
+export { ResourceObject } from './services/resource-object'
 export { getBackend } from './services/backend'
 export { getCurrentResource } from './services/current-resource'
 export { getResource } from './services/resource-manager'
