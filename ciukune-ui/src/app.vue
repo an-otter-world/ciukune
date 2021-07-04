@@ -23,16 +23,16 @@ export default defineComponent({
     Navbar
   },
   setup() {
-    const loading = ref(false)
     const me = getMeResource()
+    const loading = ref(false)
 
     onMounted(async () => {
       await me.refresh()
     })
 
     return {
-      loading: loading,
-      me: me,
+      loading,
+      me,
     }
   },
 })

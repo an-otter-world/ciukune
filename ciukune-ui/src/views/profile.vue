@@ -28,9 +28,9 @@ export default defineComponent({
       const me = getMeResource()
 
       return {
-	me,
+	      me,
         email: me.state.email,
-	username: me.state.username,
+	      username: me.state.username,
       }
     },
 })

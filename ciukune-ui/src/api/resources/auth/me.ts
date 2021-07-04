@@ -2,7 +2,7 @@ import { Resource } from '@ciukune/ckc'
 import { getResource } from '@ciukune/ckc'
 import { User } from '../../types/user'
 
-class MeResource extends Resource {
+export class MeResource extends Resource {
   state: User | undefined
 
   async refresh() {
@@ -10,6 +10,6 @@ class MeResource extends Resource {
   }
 }
 
-export function getMeResource() {
+export function getMeResource() : MeResource {
   return getResource(MeResource, 'auth/me')
 }

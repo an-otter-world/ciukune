@@ -1,36 +1,44 @@
-import { Backend } from '@ciukune/ckc'
-import { Resource } from '@ciukune/ckc'
+import { Backend, getBackend, Resource } from '@ciukune/ckc'
 import { getResource } from '@ciukune/ckc'
+import { getMeResource, MeResource } from './me'
 
 interface LoginResponse {
   access: string
   refresh: string
 }
 
-class LoginResource extends Resource {
+export class LoginResource extends Resource {
   email: string | undefined
   password: string | undefined
 
   constructor(url: string, backend: Backend) {
     super(url, backend)
-    this._loginBackend = backend
+    this._me = getMeResource()
   }
 
-  async refresh() {
+  async login() {
     let response = await this._post<LoginResponse, {}>({
       email: this.email,
       password: this.password
     })
 
     if(!response) {
-      return false;
+      return;
     }
 
-    this._loginBackend.setToken(response.access)
-    return true
+    this.email = undefined
+    this.password = undefined
+
+    this.backend.setToken(response.access)
+    await this._me.refresh()
+  }
+  
+  async logout() {
+    this.backend.clearToken()
+    await this._me.refresh()
   }
 
-  private _loginBackend: Backend
+  private _me: MeResource
 }
 
 export function getLoginResource() {

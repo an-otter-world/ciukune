@@ -9,5 +9,24 @@ ciu-navbar
       template(#header)
         ciu-icon(icon="user-circle")
       ciu-router-link(to="/profile" icon="user-circle") {{ $t('navbar.profile') }}
-      ciu-router-link(to="logout" icon="sign-out-alt") {{ $t('navbar.logout') }}
+      logout-button
 </template>
+
+
+<script lang="ts">
+import { defineComponent } from 'vue'
+import LogoutButton from './logout-button.vue'
+import { getLoginResource } from '../api/resources/auth/login'
+
+export default defineComponent({
+  components: {
+    LogoutButton
+  },
+  setup() {
+    const login = getLoginResource() 
+    return {
+      logout: async () => await login.logout()
+    }
+  },
+})
+</script>

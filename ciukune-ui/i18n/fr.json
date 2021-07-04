@@ -8,8 +8,10 @@
     "title": "Ciu Kune - Identification"
   },
   "navbar": {
-    "profile": "Profile",
-    "logout": "Deconnexion"
+    "profile": "Profile"
+  },
+  "logout-button": {
+    "logout": "Déconnexion"
   },
   "profile": {
     "email": "Courriel",
