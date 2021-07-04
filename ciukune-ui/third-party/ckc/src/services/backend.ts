@@ -1,6 +1,9 @@
 import axios from 'axios'
+import { App } from 'vue'
 import { AxiosInstance } from 'axios'
+import { InjectionKey } from 'vue'
 import { Method } from 'axios'
+import { inject } from 'vue'
 
 const _AUTH_TOKEN_STORAGE_KEY = 'ciu_auth_token'
 const _AUTHORIZATION_HEADER_KEY = 'Authorization'
@@ -60,4 +63,18 @@ export class Backend {
   }
 
   private _instance: AxiosInstance
+}
+
+const BackendKey : InjectionKey<Backend> = Symbol()
+
+export function getBackend() {
+  const backend = inject(BackendKey)
+  if(!backend) {
+    throw new Error("No backend available, please install it in Vue JS application through the backend/installBackend method")
+  }
+  return backend
+}
+
+export function installBackend<T>(app: App<T>) {
+  app.provide(BackendKey, new Backend())
 }

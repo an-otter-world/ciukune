@@ -17,6 +17,7 @@ import CiuTextField from './components/ciu-text-field.vue'
 import { App } from 'vue';
 import { MediaQueryOptions } from './services/media-query'
 import { installResourceManager } from './services/resource-manager'
+import { installBackend } from './services/backend'
 import { mediaQuery } from './services/media-query'
 
 export interface CkcOptions {
@@ -24,6 +25,7 @@ export interface CkcOptions {
 }
 
 export default function install<T>(app: App<T>, options?: CkcOptions) {
+    installBackend(app)
     installResourceManager(app)
     app
       .component('CiuApiErrors', CiuApiErrors)
@@ -44,7 +46,8 @@ export default function install<T>(app: App<T>, options?: CkcOptions) {
     app.config.globalProperties.$mq = mediaQuery(options?.mqOptions)
 }
 
-export { Resource } from './services/resource'
 export { Backend } from './services/backend'
-export { getResource } from './services/resource-manager'
+export { Resource } from './services/resource'
+export { getBackend } from './services/backend'
 export { getCurrentResource } from './services/current-resource'
+export { getResource } from './services/resource-manager'
