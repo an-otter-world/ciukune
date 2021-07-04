@@ -1,13 +1,8 @@
-import { Resource } from '@ciukune/ckc'
+import { ResourceObject } from '@ciukune/ckc'
 import { getResource } from '@ciukune/ckc'
 import { User } from '../../types/user'
 
-export class MeResource extends Resource {
-  state: User | undefined
-
-  async refresh() {
-    this.state  = await this._get<User>()
-  }
+export class MeResource extends ResourceObject<User> {
 }
 
 export function getMeResource() : MeResource {

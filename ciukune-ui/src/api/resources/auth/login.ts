@@ -30,12 +30,12 @@ export class LoginResource extends Resource {
     this.password = undefined
 
     this.backend.setToken(response.access)
-    await this._me.refresh()
+    await this._me.load()
   }
   
   async logout() {
     this.backend.clearToken()
-    await this._me.refresh()
+    await this._me.load()
   }
 
   private _me: MeResource

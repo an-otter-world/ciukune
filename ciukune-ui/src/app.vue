@@ -27,7 +27,7 @@ export default defineComponent({
     const loading = ref(false)
 
     onMounted(async () => {
-      await me.refresh()
+      await me.load()
     })
 
     return {

@@ -11,3 +11,7 @@ class MeView(APIView):
         serializer = UserSerializer(instance=request.user)
         return Response(serializer.data)
 
+    def patch(self, request):
+        serializer = UserSerializer(instance=request.user)
+        serializer.update(request.user, request.data)
+        return Response(serializer.data)
