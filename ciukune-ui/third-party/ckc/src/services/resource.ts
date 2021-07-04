@@ -13,6 +13,8 @@ export abstract class Resource {
   get fieldsErrors() { return this._fieldsErrors }
   get loading() { return this._loading }
 
+  protected get backend() { return this._backend }
+
   resetErrors() {
     this._error = ""
     this._fieldsErrors = {}
