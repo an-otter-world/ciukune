@@ -12,11 +12,11 @@ import { defineComponent } from 'vue'
 export default defineComponent({
   props: {
     'to': {
-      type: Object as PropType<String>,
+      type: String,
       required: true,
     },
     'icon': {
-      type: Object as PropType<String>,
+      type: String,
       required: true,
     }
   },
