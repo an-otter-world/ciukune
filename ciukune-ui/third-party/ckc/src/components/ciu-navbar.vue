@@ -12,6 +12,7 @@ div(class="ciu-primary ciu-navbar" v-bind:class="{'ciu-small': !$mq('sm')}")
 </template>
 
 <script lang="ts">
+
 import { defineComponent } from 'vue'
 import { ref } from 'vue'
 
@@ -19,7 +20,7 @@ export default defineComponent({
   setup() {
     const isOpened = ref(false);
     const html = document.documentElement
-    const menu = ref(null)
+    const menu = ref<Node | null>(null)
 
     function open() {
       html.addEventListener('click', onBodyClick);
@@ -40,8 +41,8 @@ export default defineComponent({
       }
     }
 
-    function onBodyClick(e) {
-      if(!menu.value.contains(e.target)) {
+    function onBodyClick(e: Event) {
+      if(!menu.value!.contains(e.target as Node)) {
         close()
       }
     }

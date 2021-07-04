@@ -2,7 +2,7 @@
 div(class="ciu-control ciu-input")
   slot
   div(class="ciu-input-errors")
-    div(v-for="error in errors" :key="error.id") {{ error }}
+    div(v-for="error in errors" :key="error") {{ error }}
 </template>
 
 <script lang="ts">
@@ -12,7 +12,7 @@ import { PropType } from 'vue'
 export default defineComponent({
     props: {
       'errors': {
-        type: Object as PropType<String[]>,
+        type: Object as PropType<string[]>,
         default: []
       }
     },

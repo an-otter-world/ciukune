@@ -4,7 +4,7 @@ div(class="ciu-text-field")
     placeholder=" "
     :type="password ? 'password' : 'text'"
     :value="modelValue"
-    @input="valueChanged($event.target.value)"
+    @input="valueChanged($event)"
   )
   div(class='ciu-text-field-placeholder')
     div {{placeholder}}
@@ -24,8 +24,11 @@ export default defineComponent({
         'update:modelValue',
         'test'
     ],
-    setup(props, {emit}) {
-      let valueChanged = (newValue: string) => emit('update:modelValue', newValue)
+    setup(_, {emit}) {
+      function valueChanged(event: Event) {
+        const input = event.target as HTMLInputElement
+        emit('update:modelValue', input.value)
+      }
       return {
           valueChanged
       }

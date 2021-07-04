@@ -1,5 +1,7 @@
 import './assets/styles/_index.css'
 import './font-awesome'
+import './ckc.d.ts'
+import Vue from 'vue'
 import CiuApiErrors from './components/ciu-api-errors.vue'
 import CiuApiForm from './components/ciu-api-form.vue'
 import CiuApiInput from './components/ciu-api-input.vue'
@@ -19,6 +21,12 @@ import { MediaQueryOptions } from './services/media-query'
 import { installResourceManager } from './services/resource-manager'
 import { installBackend } from './services/backend'
 import { mediaQuery } from './services/media-query'
+
+declare module '@vue/runtime-core' {
+  interface ComponentCustomProperties {
+    $mq: (query: string) => boolean
+  }
+}
 
 export interface CkcOptions {
   mqOptions?: MediaQueryOptions

@@ -8,7 +8,11 @@ export interface IResourceObject {
 export class ResourceObject<TObject> extends Resource implements IResourceObject {
   state: TObject | undefined = undefined;
 
-  async load() {
+  async load(force: boolean = false) {
+    if(!force && this.state != undefined) {
+      return
+    }
+
     this.state = await this._get<TObject>()
   }
 

@@ -7,18 +7,21 @@
   </svg>
 </template>
 
-<script>
+<script lang="ts">
+import { PropType } from 'vue'
 import { defineComponent, computed } from "vue";
 import { findIconDefinition } from "@fortawesome/fontawesome-svg-core";
+import { IconName } from "@fortawesome/fontawesome-svg-core";
+import { IconPrefix } from "@fortawesome/fontawesome-svg-core";
 
 export default defineComponent({
   props: {
     icon: {
-      type: String,
+      type: Object as PropType<IconName>,
       required: true
     },
     type: {
-      type: String,
+      type: Object as PropType<IconPrefix>,
       default: "fas",
       required: false
     },
@@ -34,7 +37,7 @@ export default defineComponent({
 
     const width = computed(() => definition.value.icon[0]);
     const height = computed(() => definition.value.icon[1]);
-    const svgPath = computed(() => definition.value.icon[4]);
+    const svgPath = computed(() => definition.value.icon[4] as string);
 
     return { width, height, svgPath };
   }
