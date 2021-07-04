@@ -13,7 +13,7 @@ import { ref } from 'vue'
 import { onMounted } from 'vue'
 import LoginView from './views/login.vue'
 import Navbar from './components/navbar.vue'
-import { getMeResource } from './api/resources/auth/me'
+import { getMeResource } from './api/resources/user/me'
 
 
 export default defineComponent({

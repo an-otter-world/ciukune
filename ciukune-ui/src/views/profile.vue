@@ -21,7 +21,7 @@ ciu-component
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { getMeResource } from '../api/resources/auth/me'
+import { getMeResource } from '../api/resources/user/me'
 
 export default defineComponent({
     setup() {

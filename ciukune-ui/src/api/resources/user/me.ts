@@ -6,5 +6,5 @@ export class MeResource extends ResourceObject<User> {
 }
 
 export function getMeResource() : MeResource {
-  return getResource(MeResource, 'auth/me')
+  return getResource(MeResource, 'user/me')
 }

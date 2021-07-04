@@ -1,6 +1,7 @@
-import { Backend, getBackend, Resource } from '@ciukune/ckc'
+import { Backend, Resource } from '@ciukune/ckc'
 import { getResource } from '@ciukune/ckc'
-import { getMeResource, MeResource } from './me'
+import { getMeResource } from '../user/me'
+import { MeResource } from '../user/me'
 
 interface LoginResponse {
   access: string
