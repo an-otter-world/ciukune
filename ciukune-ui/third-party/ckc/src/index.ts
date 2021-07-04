@@ -16,7 +16,7 @@ import CiuSpinner from './components/ciu-spinner.vue'
 import CiuTextField from './components/ciu-text-field.vue'
 import { App } from 'vue';
 import { MediaQueryOptions } from './services/media-query'
-import { installResourceManager } from './core/resource-manager'
+import { installResourceManager } from './services/resource-manager'
 import { mediaQuery } from './services/media-query'
 
 export interface CkcOptions {
@@ -44,7 +44,7 @@ export default function install<T>(app: App<T>, options?: CkcOptions) {
     app.config.globalProperties.$mq = mediaQuery(options?.mqOptions)
 }
 
-export { Resource } from './core/resource'
-export { Backend } from './core/backend'
-export { getResource } from './core/resource-manager'
-export { getCurrentResource } from './core/current-resource'
+export { Resource } from './services/resource'
+export { Backend } from './services/backend'
+export { getResource } from './services/resource-manager'
+export { getCurrentResource } from './services/current-resource'

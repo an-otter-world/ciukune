@@ -6,7 +6,7 @@ div(class="ciu-control ciu-resource-errors" v-if="error") {{ error }}
 <script lang="ts">
 import { defineComponent } from 'vue'
 import { computed } from 'vue'
-import { getCurrentResource } from '../core/current-resource'
+import { getCurrentResource } from '../services/current-resource'
 
 export default defineComponent({
   props: {
