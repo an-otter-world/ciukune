@@ -1,1 +1,0 @@
-"""Tovarich core app."""
