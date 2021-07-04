@@ -24,8 +24,16 @@ export abstract class Resource {
     return await this._query<TResponse, void>('GET', undefined)
   }
 
+  protected async _patch<TResponse, TData>(data: TData) : Promise<TResponse | undefined> {
+    return await this._query<TResponse, TData>('PATCH', data)
+  }
+
   protected async _post<TResponse, TData>(data: TData) : Promise<TResponse | undefined> {
     return await this._query<TResponse, TData>('POST', data)
+  }
+
+  protected async _delete() : Promise<void> {
+    await this._query<void, void>('GET', undefined)
   }
 
   private async _query<TResponse, TData>(method: Method, data: TData) {
