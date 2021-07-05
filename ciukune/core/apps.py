@@ -17,7 +17,7 @@ _OBJECT_VIEW_MAPPING = {
     'delete': 'destroy'
 }
 
-class CoreConfig(CiukuneAppConfig):
+class AppConfig(CiukuneAppConfig):
     """AppConfig implementation for ciukune core."""
     name = 'ciukune.core'
     label = 'ciukune'
