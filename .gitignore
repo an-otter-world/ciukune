@@ -5,6 +5,7 @@
 .env
 .static
 ciukune.egg-info
+ciukune/core/static/ui
 coverage_html
 db.sqlite3
 geckodriver.log

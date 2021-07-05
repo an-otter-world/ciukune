@@ -8,5 +8,28 @@ export default defineConfig({
     proxy: {
       '/api': 'http://localhost:8000/',
     }
-  }
+  },
+  build: {
+    sourcemap: true,
+    lib: {
+      entry: './src/main.ts',
+      name: 'ciukune',
+      formats: ['es']
+    },
+    rollupOptions: {
+      treeshake: false,
+      output: {
+        assetFileNames: 'css/core[extname]',
+        chunkFileNames: 'js/[name].js',
+        entryFileNames: 'js/ciukune.js',
+        dir: '../ciukune/core/static/ui/',
+        minifyInternalExports: false,
+        manualChunks: {
+          'vue': ['vue'],
+          'ckc':['@ciukune/ckc'],
+          'vue-router': ['vue-router']
+        }
+      }
+    }
+  },
 })
