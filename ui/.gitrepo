@@ -6,7 +6,7 @@
 [subrepo]
 	remote = https://github.com/an-otter-world/ciukune-ui
 	branch = dev
-	commit = 22157d437aec7cd21aa8cd25f92a3345494d7117
+	commit = 1fd244696db277725bacb6f1e3811f0990e83b60
 	method = merge
 	cmdver = 0.4.0
-	parent = b8ff43fc50457d99ac7b49e94a62fe5e46b09526
+	parent = 0017126f0c19d9350e381278933405e387abf51f
