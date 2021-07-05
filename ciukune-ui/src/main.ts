@@ -9,3 +9,7 @@ createApp(App)
     .use(i18n)
     .use(router)
     .mount('#app')
+
+const TestBlah = 'blah'
+
+export { TestBlah }

@@ -19,9 +19,9 @@ export default defineConfig({
     rollupOptions: {
       treeshake: false,
       output: {
-        assetFileNames: 'css/core[extname]',
+        assetFileNames: 'css/ciukune.core[extname]',
         chunkFileNames: 'js/[name].js',
-        entryFileNames: 'js/ciukune.js',
+        entryFileNames: 'js/ciukune.core.js',
         dir: '../ciukune/core/static/ui/',
         minifyInternalExports: false,
         manualChunks: {

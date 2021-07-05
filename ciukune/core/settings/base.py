@@ -5,7 +5,9 @@ from os.path import join
 
 BASE_DIR = dirname(dirname(abspath(__file__)))
 
-DEBUG = True
+DEBUG=True
+
+DEBUG_UI=True
 
 APPEND_SLASH = False
 

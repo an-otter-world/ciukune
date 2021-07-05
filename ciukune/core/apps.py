@@ -33,6 +33,7 @@ class AppConfig(CiukuneAppConfig):
 
         from ciukune.core.views.user.me import MeView
         from ciukune.core.views.user import UserViewSet
+        from ciukune.core.views.index import IndexView
 
         yield re_path(r'api/',
             include([
@@ -43,4 +44,4 @@ class AppConfig(CiukuneAppConfig):
                 path('user/<int:pk>', UserViewSet.as_view(_OBJECT_VIEW_MAPPING), name='user_detail'),
             ])
         )
-        yield re_path(r'^(?!api).*$', TemplateView.as_view(template_name="index.html"), name="index")
+        yield re_path(r'^(?!api).*$', IndexView.as_view(), name="index")
