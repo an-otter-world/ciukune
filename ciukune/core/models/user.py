@@ -9,7 +9,7 @@ from django.db.models import EmailField
 from django.db.models import ImageField
 from django.utils.translation import ugettext_lazy as _
 
-from ciukune.utils.user_manager import UserManager
+from ciukune.core.utils.user_manager import UserManager
 
 class User(AbstractBaseUser, PermissionsMixin):
     """ciukune user model.

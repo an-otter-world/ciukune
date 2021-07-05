@@ -11,7 +11,7 @@ APPEND_SLASH = False
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'ciukune.oi.lan']
 
-ROOT_URLCONF = 'ciukune.urls'
+ROOT_URLCONF = 'ciukune.core.urls'
 
 LOGIN_URL = '/api-auth/login'
 
@@ -26,7 +26,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'rest_framework.authtoken',
-    'ciukune',
+    'ciukune.core',
 ]
 
 MIDDLEWARE = [

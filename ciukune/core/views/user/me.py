@@ -1,5 +1,5 @@
 """Returns the currently logged in user, if applicable."""
-from ciukune.serializers.user import UserSerializer
+from ciukune.core.serializers.user import UserSerializer
 from rest_framework.views import APIView
 from rest_framework.response import Response
 

@@ -1,7 +1,7 @@
 """ciukune custom user serializing & related utilities."""
 from rest_framework.serializers import HyperlinkedModelSerializer
 
-from ciukune.models import User
+from ciukune.core.models import User
 
 class UserSerializer(HyperlinkedModelSerializer):
     """ciukune custom user serializer.
